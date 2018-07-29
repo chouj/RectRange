@@ -31,15 +31,14 @@ function [Xrange,Yrange]=rectrange(xgrid,ygrid,f,varargin);
 % Yrange      - The range of selected rectangle in y-direction.
 %
 % For example,
-%     [x,y]=meshgrid([0.5:400.5],[-100.1:100.1]);
-%     z=peaks(x,y);
+%     [X,Y,Z] = peaks;
 %     f=figure;
-%     contour(x,y,z);
+%     contourf(X,Y,Z,'linestyle','none');
 %     axis equal
-%     [rx,ry]=rectrange(x,y,f);
+%     [rx,ry]=rectrange(X,Y,f);
 %
-% One can test this function by uncommenting lines 105, 106, 124-126, 131
-% and 143.The rectangle you selected and its two vertices will be drawn in
+% One can test this function by uncommenting lines 106, 107, 125-128, 133-
+% 134 and 145.The rectangle you selected and its two vertices will be drawn in
 % your figure.
 %
 % Author:
@@ -124,6 +123,7 @@ rp=(max(p.Results.ygrid(:))-min(p.Results.ygrid(:)))*finalRect(2)+min(p.Results.
 rp2=(max(p.Results.ygrid(:))-min(p.Results.ygrid(:)))*finalRect(2)+min(p.Results.ygrid(:))+(max(p.Results.ygrid(:))-min(p.Results.ygrid(:)))*finalRect(4);
 
 %plot(cp,rp,'ro')
+%text(cp,rp,['(',num2str(cp),',',num2str(rp),')'],'color','r');
 %plot(cp2,rp2,'ro')
 %plot(p.Results.xgrid(rindex,cindex),p.Results.ygrid(rindex,cindex),'r+')
 
@@ -131,9 +131,9 @@ rlength=round(c*finalRect(3));
 clength=round(r*finalRect(4));
 
 %plot(p.Results.xgrid(rindex+clength,cindex+rlength),p.Results.ygrid(rindex+clength,cindex+rlength),'r+')
+%text(p.Results.xgrid(rindex+clength,cindex+rlength),p.Results.ygrid(rindex+clength,cindex+rlength),['(',num2str(p.Results.xgrid(rindex+clength,cindex+rlength)),',',num2str(p.Results.ygrid(rindex+clength,cindex+rlength)),')'],'color','b');
 
 if strcmp(p.Results.output,'nearest')==1
-    
     Xrange=[p.Results.xgrid(rindex,cindex) p.Results.xgrid(rindex+clength,cindex+rlength)];
     Yrange=[p.Results.ygrid(rindex,cindex) p.Results.ygrid(rindex+clength,cindex+rlength)];
 else
