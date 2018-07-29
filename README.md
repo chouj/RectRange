@@ -26,10 +26,9 @@ a MATLAB function for obtaining coordinate range of a selected rectangle in figu
 
 For example,
 ```matlab
-     [x,y]=meshgrid([0.5:400.5],[-100.1:100.1]);
-     z=peaks(x,y);
+     [X,Y,Z] = peaks;
      f=figure;
-     contour(x,y,z);
+     contourf(X,Y,Z,'linestyle','none');
      axis equal
      [rx,ry]=rectrange(x,y,f);
 ```
