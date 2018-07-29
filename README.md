@@ -32,7 +32,7 @@ For example,
      f=figure;
      contourf(X,Y,Z,'linestyle','none');
      axis equal
-     [rx,ry]=rectrange(x,y,f);
+     [rx,ry]=rectrange(X,Y,f);
 ```
 One can test this function by uncommenting lines 106, 107, 125-128, 133-134 and 145. The rectangle you selected and its two vertices will be drawn in your figure.
 
