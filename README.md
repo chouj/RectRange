@@ -32,6 +32,6 @@ For example,
      axis equal
      [rx,ry]=rectrange(x,y,f);
 ```
-One can test this function by uncommenting lines 105, 106, 124-126, 131 and 143. The rectangle you selected and its two vertices will be drawn in your figure.
+One can test this function by uncommenting lines 106, 107, 125-128, 133-134 and 145. The rectangle you selected and its two vertices will be drawn in your figure.
 
 2018/07/29
